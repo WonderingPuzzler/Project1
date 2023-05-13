@@ -135,6 +135,8 @@ class GUI:
         self.button_back = Button(window, text='Back?', font=('Arial Bold', 12), bg='RED', command=lambda: self.menu2(window))
         self.button_back.place(x=10, y=510, width=190, height=70)
 
+        self.tip_total = f'{self.tip_total:.2f}'
+        self.total = f'{self.total:.2f}'
 
     def order(self, window):
         self.next_screen(window)
@@ -194,8 +196,9 @@ class GUI:
 
     def finance_file(self, window):
         self.count = 0
-        self.tip_total = f'{self.tip_total:.2f}'
-        self.total = f'{self.total:.2f}'
+        self.count_2 = 0
+
+
 
         if self.check_order(window) == True:
             self.label_submit = Label(window,text=f'Names should only be letters and spaces\n\nCredit Card # needs spaces and numbers only\n\nCVV should be three numbers\n\nAddress is alphanumerics, spaces can be included',font=('Arial Bold', 11), bg='#FFDF57')
